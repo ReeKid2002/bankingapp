@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Customer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Crete+Round&family=Fredoka+One&family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/teamwork.png">
+    <link rel="stylesheet" href="css/customerlist_css.css">
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/customers">All Customer</a></li>
+                    <li><a href="/addcustomer">New Customer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>All Customer</h1>
+    </div>
+    <div class="custlist">
+        <table class="custtable">
+            <thead>
+                <th>S.No</th>
+                <th>Customer Name</th>
+                <th>Customer Email</th>
+                <th>Customer Balance</th>
+                <th></th>
+            </thead>
+            <tbody>
+        <% for(let i=0;i<custArray.length;i++){ %>
+                <tr>
+                <form action="/customers" method="post">
+                    <input type="hidden" name="index" value="<%=i%>">
+                    <td><p style="color: white;"><%=(i+1)%></p></td>
+                    <td><p style="color: white;"><%=custArray[i].name%></p></td>
+                    <td><p style="color: white;"><%=custArray[i].email%></p></td>
+                    <td><p style="color: white;"><%=custArray[i].amount%></p></td>
+                    <td><button type="submit">View</button></td>
+                </form>
+            </tr>
+        <% } %>
+    </tbody>
+    </table>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+</html>

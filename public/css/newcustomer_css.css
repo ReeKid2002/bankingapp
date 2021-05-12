@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    background-color: #defcf9;
+    position: relative;
+}
+ nav{
+     float: right;
+ }
+ header{
+     margin: 0%;
+     background-color: #30e3ca;
+ }
+ header::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+ ul{
+     margin: 0;
+     padding: 0; 
+     list-style: none;
+ }
+ ul li{
+     display: inline-block;
+     margin-left: 70px;
+     padding-top: 30px;
+     padding-bottom: 30px;
+     margin-right: 40px;
+     position: relative;
+ }
+ nav ul li a{
+    font-family: 'Fredoka One', cursive;
+    color: #1b262c;
+    text-decoration: none; 
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+ }
+ nav ul li a:hover{
+    color: whitesmoke;
+ }
+ nav ul li a::before{
+     content: "";
+     display: block;
+     height: 5px;
+     width: 0%;
+     background-color: whitesmoke;
+     position: absolute;
+     top: 24px;
+ }
+ nav ul li a:hover::before{
+     width: 100%;
+     transition: all ease-in-out 250ms;
+ }
+ .container h1{
+    font-family: 'Krona One', sans-serif;
+     color: #112d4e;
+     position: absolute;
+     font-size: 50px;
+     right: 380px;
+     top:80px
+ }
+ .container h1::after{
+     content: '';
+     display: block;
+     height: 10px;
+     width: 100%;
+     background: #112d4e;
+ }
+ .newcust{
+     background: #cadefc;
+     position: absolute;
+     top: 210px;
+     right: 460px;
+     color: #393b44;
+     padding-top: 10px;
+     padding-bottom: 20px;
+     display: table; 
+     text-align: center;
+     height: 350px;
+     width: 300px;
+     border-radius: 5px;
+     box-shadow: 0px 2px 4px 0px gray,0 4px 16px 0 grey;
+ }
+ .newcust input{
+     border: none;
+     border-bottom: 2px solid #30e3ca;
+     background:none;
+     padding: 5px 5px;
+     height: 25px;
+     width: 200px;
+ }
+ .newcust button{
+    display: table-cell; 
+    vertical-align: bottom;
+ }
+ .newcust form button{
+     border: 2px solid #55e9bc;
+     border-radius: 2px;
+     background: none;
+     height: 30px;
+     width: 150px;
+     font-size: 15px;
+     font-family: 'Lobster', cursive;
+     transition: all ease-in-out 100ms;
+ }
+ .newcust form button:hover{
+     cursor: pointer;
+     border-radius: 4px;
+     background: #c6cfff;
+     font-size: 20px;
+     color: #204051;
+ }

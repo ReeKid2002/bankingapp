@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Customer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Crete+Round&family=Fredoka+One&family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/submit.png">
+    <link rel="stylesheet" href="css/newcustomer_css.css">
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/customers">All Customer</a></li>
+                    <li><a href="/addcustomer">New Customer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>New Customer</h1>
+    </div>
+    <div class="newcust">
+        <img style="height: 100px; width: 100px;" src="image/follow.png" alt="follow">
+        <form style="padding-top: 50px;" action="/addcustomer" method="post">
+            <label for="custname" style="font-size: 20px; font-family: 'Josefin Sans', sans-serif;">Name</label>
+            <input style="font-family: 'Balsamiq Sans', cursive; font-size: 20px;" type="text" name="name" id="custname" autocomplete="off" required><br>
+            <label for="custemail" style="font-size: 20px; font-family: 'Josefin Sans', sans-serif;">Email</label>
+            <input style="font-family: 'Balsamiq Sans', cursive; font-size: 20px;" type="email" name="email" id="custemail" autocomplete="off"><br>
+            <label for="custamount" style="font-size: 20px; font-family: 'Josefin Sans', sans-serif;">Amount</label>
+            <input style="font-family: 'Balsamiq Sans', cursive; font-size: 20px;" type="number" name="amount" id="custamount" autocomplete="off" required><br>
+            <center style="padding-top: 20px; "><button type="submit" name="submit">Submit</button></center>
+        </form>
+    </div>
+    <footer>
+    </footer>
+</body>
+</html>

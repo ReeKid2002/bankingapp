@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Money</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Crete+Round&family=Fredoka+One&family=Krona+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/dollar.png">
+    <link rel="stylesheet" href="css/transfer_css.css">
+</head>
+<body>
+    <header>
+        <div class="navcontainer">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/customers">All Customer</a></li>
+                    <li><a href="/addcustomer">New Customer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Transfer Money</h1>
+    </div>
+    <div class="personalDetail">
+        <h1 style="font-family: 'Indie Flower', cursive;">Personal Information</h1>
+        <img style="padding-left: 130px; height: 100px; width: 100px;" src="image/personal-information.png" alt="personal-information">
+        <p style="margin: 40px 40px; font-family: 'Itim', cursive; font-size: 18px;">Name: <%= custList[index].name %></p>
+        <p style="margin: 40px 40px; font-family: 'Itim', cursive; font-size: 18px;">Email: <%= custList[index].email %></p>
+        <p style="margin: 40px 40px; font-family: 'Itim', cursive; font-size: 18px;">Balance: <%= custList[index].amount %></p>
+    </div>
+    <div class="transferform">
+        <h1 style="font-family: 'Indie Flower', cursive;">Transfer Form</h1>
+        <img style="padding-left: 130px; height: 100px; width: 100px;" src="image/money-transfer.png" alt="money-transfer">
+        <% if(custList.length==1){%>
+            <p style="margin-top: 50px; padding-left: 100px; font-family: 'Itim', cursive; font-size: 30px;">No Customer</p>
+        <% } else{%>
+        <form style="padding-top: 40px;" action="/customerdetail" method="post">
+            <input type="hidden" name="transferFromName" value="<%=index%>">
+            <label style="padding-left: 25px; font-family: 'Itim', cursive; font-size: 15px;" for="amount_transfer">Amount to Transfer</label>
+            <input type="number" name="amt" min="1" max="<%=custList[index].amount%>" id="amount_transfer" required><br>
+            <label style="padding-left: 25px; font-family: 'Itim', cursive; font-size: 15px;" for="transferToName">Transfer To</label>
+            <select style="border: none; color: whitesmoke; background: none;" name="transferToName" id="transferToName">
+                <% for(let i=0; i<custList.length; i++){ %>
+                <% if (i == index){ %>
+                    <% continue; %>
+                <% } %>
+                    <option style="font-family: 'Titillium Web', sans-serif; color: #455d7a; font-style: oblique;" value="<%=i%>"><%=custList[i].name%></option>        
+                <% } %>
+            </select><br>
+            <center style="padding: 50px;"><button type="submit" name="submit">Transfer</button></center>
+        </form>
+        <%}%>
+    </div>
+    <div class="transfertable">
+        <h1 style="font-family: 'Indie Flower', cursive;">Transaction History</h1>
+        <img  style="padding-left: 130px; height: 100px; width: 100px;" src="image/hourglass.png" alt="hourglass">
+        <div class="trans" style="margin-top: 20px; overflow-y: scroll; overflow-x: hidden; background: none; height: 200px; width: 100%;">
+        <table class="transfer">
+            <thead>
+                <th>To</th>
+                <th>Amount</th>
+            </thead>
+            <tbody>
+                <% for(let v=0;v<custList[index].transferlist.length;v++){ %>
+                    <tr>
+                        <td><p style="font-family: 'Itim', cursive; font-size: 15px; text-align: center; padding-left: 5px;"><%= custList[index].transferlist[v].to %></p></td>
+                        <td><p style="font-family: 'Itim', cursive; font-size: 15px; text-align: center;"><%= custList[index].transferlist[v].transferAmount %></p></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    </div>      
+    <footer>
+
+    </footer>
+</body>
+</html>
