@@ -39,7 +39,7 @@ app.post("/customerdetail",function(req,res){
 });
 
 //PORT
-const PORT = process.env.PORT | 3000;
+const port = process.env.PORT || 3000;
 
 //ADD NEW CUSTOMER PAGE ROUTE
 app.get("/addcustomer",function(req,res){
@@ -63,6 +63,6 @@ app.post("/addcustomer",function(req,res){
 });
 
 //APP LISTEN
-app.listen(PORT,function(){
-    console.log(`Server Started ${PORT}`);
+app.listen(port,function(){
+    console.log(`Server Started ${port}`);
 })
