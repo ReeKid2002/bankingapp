@@ -7,6 +7,7 @@ app.set('view engine','ejs');
 app.use(express.static("public"));
 
 //STORAGE ARRAY
+// Added comment
 let custArray = [{name:"Izuku Midoriya",email:"detroitsmash@allmight.com",amount:55000,transferlist:[]},{name:"Shoyo Hinata",email:"revisedquick@KarasunoHigh.com",amount:45000,transferlist:[]},{name:"Ron Scott",email:"labox58290@threepp.com",amount:25000,transferlist:[]},{name:"Susie Pena",email:"yllaffeli@yopmail.com",amount:27000,transferlist:[]},{name:"Katie Burke",email:"0t-fogon@exy.email",amount:27500,transferlist:[]}];
 
 //HOME PAGE ROUTE
